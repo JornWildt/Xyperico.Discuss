@@ -3,6 +3,7 @@ using Xyperico.Agres;
 using Xyperico.Agres.InMemoryEventStore;
 using Xyperico.Discuss.Forums;
 using Xyperico.Discuss.Forums.Commands;
+using Xyperico.Base.Exceptions;
 
 
 namespace Xyperico.Discuss.Tests.Forums
@@ -59,6 +60,18 @@ namespace Xyperico.Discuss.Tests.Forums
       Assert.AreEqual(cmd.Id, f3.Id);
       Assert.AreEqual("Forum A", f3.Title);
       Assert.AreEqual("Oh well", f3.Description);
+    }
+
+
+    [Test]
+    public void WhenSendingCommandToNonExistingForumItThrowsMissingResourceException()
+    {
+      // Arrange
+      UpdateForumCommand cmd = new UpdateForumCommand(new ForumId(), "Forum A", "Oh well");
+
+      // Act + Assert
+      AssertThrows<MissingResourceException>(() => Service.Handle(cmd));
+      
     }
   }
 }
