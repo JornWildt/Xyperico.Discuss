@@ -1,18 +1,14 @@
-﻿using System;
-using Xyperico.Base;
-using Xyperico.Agres;
-using System.Collections.Generic;
-using Xyperico.Discuss.Forums.Events;
+﻿using System.Collections.Generic;
 using CuttingEdge.Conditions;
+using Xyperico.Agres;
 using Xyperico.Discuss.Forums.Commands;
+using Xyperico.Discuss.Forums.Events;
 
 
 namespace Xyperico.Discuss.Forums
 {
   public class Forum : AbstractAggregate<ForumId>
   {
-    public override ForumId Id { get; protected set; }
-
     public string Title { get; protected set; }
 
     public string Description { get; protected set; }
