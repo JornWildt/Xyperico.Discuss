@@ -4,7 +4,7 @@ using Xyperico.Discuss.Forums.Commands;
 
 namespace Xyperico.Discuss.Forums
 {
-  public class ForumApplicationService : AbstractApplicationService<Forum, ForumId>
+  public class ForumApplicationService : GenericApplicationService<Forum, ForumId>
   {
     public ForumApplicationService(IEventStore eventStore)
       : base(eventStore)

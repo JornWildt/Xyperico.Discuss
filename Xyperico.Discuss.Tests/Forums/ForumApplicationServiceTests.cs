@@ -12,7 +12,7 @@ namespace Xyperico.Discuss.Tests.Forums
   public class ForumApplicationServiceTests : TestHelper
   {
     IEventStore Store;
-    AbstractRepository<Forum, ForumId> Repository;
+    GenericRepository<Forum, ForumId> Repository;
     ForumApplicationService Service;
 
     
@@ -20,7 +20,7 @@ namespace Xyperico.Discuss.Tests.Forums
     {
       base.SetUp();
       Store = new InMemoryEventStore();
-      Repository = new AbstractRepository<Forum, ForumId>(Store);
+      Repository = new GenericRepository<Forum, ForumId>(Store);
       Service = new ForumApplicationService(Store);
     }
 
