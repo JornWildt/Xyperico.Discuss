@@ -1,0 +1,11 @@
+.nuget
+bin/
+obj/
+*.user
+*.suo
+TestResult.xml
+*.VisualState.xml
+UNUSED*
+UNUSED*/
+Logs/
+packages/
