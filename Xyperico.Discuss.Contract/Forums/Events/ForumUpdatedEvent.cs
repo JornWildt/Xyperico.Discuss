@@ -1,10 +1,11 @@
-﻿using CuttingEdge.Conditions;
-using Xyperico.Agres;
+﻿using System;
+using CuttingEdge.Conditions;
 using Xyperico.Agres.Contract;
 
 
 namespace Xyperico.Discuss.Contract.Forums.Events
 {
+  [Serializable]
   public class ForumUpdatedEvent : IEvent
   {
     public ForumId Id { get; private set; }

@@ -5,6 +5,7 @@ using Xyperico.Base.Exceptions;
 using Xyperico.Discuss.Contract.Forums;
 using Xyperico.Discuss.Contract.Forums.Commands;
 using Xyperico.Discuss.Forums;
+using Xyperico.Agres.Serializer;
 
 
 namespace Xyperico.Discuss.Tests.Forums
@@ -20,7 +21,9 @@ namespace Xyperico.Discuss.Tests.Forums
     protected override void SetUp()
     {
       base.SetUp();
-      Store = new InMemoryEventStore();
+      IAppendOnlyStore aStore = new InMemoryAppendOnlyStore();
+      ISerializer serializer = new DotNetBinaryFormaterSerializer();
+      Store = new EventStore(aStore, serializer);
       Repository = new GenericRepository<Forum, ForumId>(Store);
       Service = new ForumApplicationService(Store);
     }

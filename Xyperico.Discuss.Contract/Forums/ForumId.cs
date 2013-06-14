@@ -5,6 +5,7 @@ using Xyperico.Agres.Contract;
 
 namespace Xyperico.Discuss.Contract.Forums
 {
+  [Serializable]
   public class ForumId : Identity<Guid>
   {
     public ForumId()
