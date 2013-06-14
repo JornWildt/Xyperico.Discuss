@@ -1,16 +1,17 @@
 ﻿using CuttingEdge.Conditions;
 using Xyperico.Agres;
+using Xyperico.Agres.Contract;
 
 
-namespace Xyperico.Discuss.Forums.Commands
+namespace Xyperico.Discuss.Contract.Forums.Events
 {
-  public class UpdateForumCommand : ICommand<ForumId>
+  public class ForumCreatedEvent : IEvent
   {
     public ForumId Id { get; private set; }
     public string Title { get; private set; }
     public string Description { get; private set; }
 
-    public UpdateForumCommand(ForumId id, string title, string description)
+    public ForumCreatedEvent(ForumId id, string title, string description)
     {
       Condition.Requires(id, "id").IsNotNull();
       Condition.Requires(title, "title").IsNotNullOrEmpty();

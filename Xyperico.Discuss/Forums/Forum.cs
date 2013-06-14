@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using CuttingEdge.Conditions;
 using Xyperico.Agres;
-using Xyperico.Discuss.Forums.Commands;
-using Xyperico.Discuss.Forums.Events;
+using Xyperico.Agres.Contract;
+using Xyperico.Discuss.Contract.Forums;
+using Xyperico.Discuss.Contract.Forums.Commands;
+using Xyperico.Discuss.Contract.Forums.Events;
 
 
 namespace Xyperico.Discuss.Forums
@@ -13,10 +15,6 @@ namespace Xyperico.Discuss.Forums
 
     public string Description { get; protected set; }
 
-
-    public Forum()
-    {
-    }
 
     /// <summary>
     /// Constructor for dehydrating from events.

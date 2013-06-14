@@ -51,7 +51,11 @@
     <Compile Include="TestHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Xyperico\Xyperico.Agres\Xyperico.Agres.csproj">
+    <ProjectReference Include="..\..\Xyperico\Xyperico.Agres\Xyperico.Agres.Contract\Xyperico.Agres.Contract.csproj">
+      <Project>{B18C85D4-0E07-477A-BE44-1F22281D47C7}</Project>
+      <Name>Xyperico.Agres.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Xyperico\Xyperico.Agres\Xyperico.Agres\Xyperico.Agres.csproj">
       <Project>{F7D3C1F6-7F4E-4DF5-9226-5AEC4180C74F}</Project>
       <Name>Xyperico.Agres</Name>
     </ProjectReference>
@@ -62,6 +66,10 @@
     <ProjectReference Include="..\..\Xyperico\Xyperico.Base\Xyperico.Base\Xyperico.Base.csproj">
       <Project>{054A30BA-B232-4FF1-9F23-1040D075764A}</Project>
       <Name>Xyperico.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xyperico.Discuss.Contract\Xyperico.Discuss.Contract.csproj">
+      <Project>{2C5AA7A1-503E-4690-A99D-BF69801D9641}</Project>
+      <Name>Xyperico.Discuss.Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Xyperico.Discuss\Xyperico.Discuss.csproj">
       <Project>{8660DA78-079F-499D-AB5A-D7632A373B17}</Project>

@@ -1,5 +1,6 @@
 ﻿using Xyperico.Agres;
-using Xyperico.Discuss.Forums.Commands;
+using Xyperico.Discuss.Contract.Forums;
+using Xyperico.Discuss.Contract.Forums.Commands;
 
 
 namespace Xyperico.Discuss.Forums

@@ -1,9 +1,10 @@
 ﻿using NUnit.Framework;
 using Xyperico.Agres;
 using Xyperico.Agres.InMemoryEventStore;
-using Xyperico.Discuss.Forums;
-using Xyperico.Discuss.Forums.Commands;
 using Xyperico.Base.Exceptions;
+using Xyperico.Discuss.Contract.Forums;
+using Xyperico.Discuss.Contract.Forums.Commands;
+using Xyperico.Discuss.Forums;
 
 
 namespace Xyperico.Discuss.Tests.Forums
