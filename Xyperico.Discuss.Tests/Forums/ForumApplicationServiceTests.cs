@@ -1,13 +1,14 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
+using ProtoBuf.Meta;
 using Xyperico.Agres;
-using Xyperico.Agres.InMemoryEventStore;
-using Xyperico.Base.Exceptions;
+using Xyperico.Agres.Contract;
+using Xyperico.Agres.ProtoBuf;
+using Xyperico.Agres.Sql;
 using Xyperico.Discuss.Contract.Forums;
 using Xyperico.Discuss.Contract.Forums.Commands;
 using Xyperico.Discuss.Forums;
-using Xyperico.Agres.Serializer;
-using Xyperico.Agres.Sql;
-using Xyperico.Agres.ProtoBuf;
+using System.Diagnostics;
 
 
 namespace Xyperico.Discuss.Tests.Forums
@@ -15,22 +16,25 @@ namespace Xyperico.Discuss.Tests.Forums
   [TestFixture]
   public class ForumApplicationServiceTests : TestHelper
   {
-    const string SqlConnectionString = "Server=localhost;Database=CommunitySite;User Id=comsite;Password=123456;";
+    const string SqlConnectionString = "Data Source=C:\\tmp\\AgresEventStore.db";
 
     IEventStore Store;
     GenericRepository<Forum, ForumId> Repository;
     IAppendOnlyStore AppendOnlyStore;
     ForumApplicationService Service;
 
+    protected override void TestFixtureSetUp()
+    {
+      base.TestFixtureSetUp();
+      RuntimeTypeModel.Default.Add(typeof(Identity<Guid>), false).Add(1, "Id").AddSubType(10, typeof(ForumId));
+    }
+
     
     protected override void SetUp()
     {
       base.SetUp();
-      //AppendOnlyStore = new InMemoryAppendOnlyStore();
-      AppendOnlyStore = new SqlAppendOnlyStore(SqlConnectionString, false);
-      //ISerializer serializer = new DotNetBinaryFormaterSerializer();
-      //ISerializer serializer = new ProtoBufSerializer();
-      ISerializer serializer = new DataContractSerializer();
+      AppendOnlyStore = new SQLiteAppendOnlyStore(SqlConnectionString, false);
+      ISerializer serializer = new ProtoBufSerializer();
       Store = new EventStore(AppendOnlyStore, serializer);
       Repository = new GenericRepository<Forum, ForumId>(Store);
       Service = new ForumApplicationService(Store);
