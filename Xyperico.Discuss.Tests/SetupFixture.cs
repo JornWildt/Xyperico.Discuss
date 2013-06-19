@@ -1,6 +1,9 @@
 ﻿using NUnit.Framework;
+using Xyperico.Agres;
 using Xyperico.Base;
-using Xyperico.Base.Collections;
+using Xyperico.Discuss.Contract.Forums;
+using Xyperico.Discuss.Contract.Forums.Commands;
+using Xyperico.Discuss.Contract.Forums.Events;
 
 
 namespace Xyperico.Discuss.Tests
@@ -10,6 +13,12 @@ namespace Xyperico.Discuss.Tests
   {
     public static void Setup(IObjectContainer container)
     {
+      // FIXME: automate this
+      AbstractSerializer.RegisterKnownType(typeof(ForumId));
+      AbstractSerializer.RegisterKnownType(typeof(CreateForumCommand));
+      AbstractSerializer.RegisterKnownType(typeof(UpdateForumCommand));
+      AbstractSerializer.RegisterKnownType(typeof(ForumCreatedEvent));
+      AbstractSerializer.RegisterKnownType(typeof(ForumUpdatedEvent));
     }
 
 

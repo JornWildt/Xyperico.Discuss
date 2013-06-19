@@ -16,15 +16,9 @@ namespace Xyperico.Discuss.Forums
     public string Description { get; protected set; }
 
 
-    /// <summary>
-    /// Constructor for dehydrating from events.
-    /// </summary>
-    /// <param name="events"></param>
     public Forum(IEnumerable<IEvent> events)
+      : base(events)
     {
-      Condition.Requires(events, "events").IsNotNull();
-
-      Mutate(events);
     }
 
 

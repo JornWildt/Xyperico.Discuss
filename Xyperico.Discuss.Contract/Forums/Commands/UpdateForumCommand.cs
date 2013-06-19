@@ -1,15 +1,23 @@
-﻿using CuttingEdge.Conditions;
-using Xyperico.Agres;
+﻿using System.Runtime.Serialization;
+using CuttingEdge.Conditions;
 using Xyperico.Agres.Contract;
 
 
 namespace Xyperico.Discuss.Contract.Forums.Commands
 {
+  [DataContract]
   public class UpdateForumCommand : ICommand<ForumId>
   {
+    [DataMember]
     public ForumId Id { get; private set; }
+
+    [DataMember]
     public string Title { get; private set; }
+
+    [DataMember]
     public string Description { get; private set; }
+
+    public UpdateForumCommand() { }
 
     public UpdateForumCommand(ForumId id, string title, string description)
     {
