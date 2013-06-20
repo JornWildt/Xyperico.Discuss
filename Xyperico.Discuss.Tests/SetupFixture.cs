@@ -1,9 +1,6 @@
 ﻿using NUnit.Framework;
-using Xyperico.Agres;
 using Xyperico.Base;
-using Xyperico.Discuss.Contract.Forums;
-using Xyperico.Discuss.Contract.Forums.Commands;
-using Xyperico.Discuss.Contract.Forums.Events;
+using Xyperico.Agres.Sql;
 
 
 namespace Xyperico.Discuss.Tests
@@ -11,14 +8,12 @@ namespace Xyperico.Discuss.Tests
   [SetUpFixture]
   public class SetupFixture
   {
+    public const string SqlConnectionString = "Data Source=AgresEventStore.db";
+
     public static void Setup(IObjectContainer container)
     {
-      // FIXME: automate this
-      AbstractSerializer.RegisterKnownType(typeof(ForumId));
-      AbstractSerializer.RegisterKnownType(typeof(CreateForumCommand));
-      AbstractSerializer.RegisterKnownType(typeof(UpdateForumCommand));
-      AbstractSerializer.RegisterKnownType(typeof(ForumCreatedEvent));
-      AbstractSerializer.RegisterKnownType(typeof(ForumUpdatedEvent));
+      SQLiteAppendOnlyStore.CreateTableIfNotExists(SqlConnectionString);
+      Xyperico.Discuss.ApplicationStarter.Initialize();
     }
 
 

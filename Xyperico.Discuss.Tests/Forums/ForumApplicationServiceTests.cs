@@ -16,24 +16,16 @@ namespace Xyperico.Discuss.Tests.Forums
   [TestFixture]
   public class ForumApplicationServiceTests : TestHelper
   {
-    const string SqlConnectionString = "Data Source=C:\\tmp\\AgresEventStore.db";
-
     IEventStore Store;
     GenericRepository<Forum, ForumId> Repository;
     IAppendOnlyStore AppendOnlyStore;
     ForumApplicationService Service;
 
-    protected override void TestFixtureSetUp()
-    {
-      base.TestFixtureSetUp();
-      RuntimeTypeModel.Default.Add(typeof(Identity<Guid>), false).Add(1, "Id").AddSubType(10, typeof(ForumId));
-    }
-
     
     protected override void SetUp()
     {
       base.SetUp();
-      AppendOnlyStore = new SQLiteAppendOnlyStore(SqlConnectionString, false);
+      AppendOnlyStore = new SQLiteAppendOnlyStore(SetupFixture.SqlConnectionString, false);
       ISerializer serializer = new ProtoBufSerializer();
       Store = new EventStore(AppendOnlyStore, serializer);
       Repository = new GenericRepository<Forum, ForumId>(Store);
