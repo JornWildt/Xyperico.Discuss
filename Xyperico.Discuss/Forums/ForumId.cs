@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using Xyperico.Agres.Contract;
 using ProtoBuf;
+using Xyperico.Agres;
 
 
-namespace Xyperico.Discuss.Contract.Forums
+namespace Xyperico.Discuss.Forums
 {
-  [Serializable]
-  [DataContract]
   [ProtoContract]
   public class ForumId : Identity<Guid>
   {

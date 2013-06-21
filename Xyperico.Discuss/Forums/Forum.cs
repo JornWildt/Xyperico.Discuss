@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using CuttingEdge.Conditions;
 using Xyperico.Agres;
-using Xyperico.Agres.Contract;
-using Xyperico.Discuss.Contract.Forums;
-using Xyperico.Discuss.Contract.Forums.Commands;
-using Xyperico.Discuss.Contract.Forums.Events;
+using Xyperico.Discuss.Forums.Commands;
+using Xyperico.Discuss.Forums.Events;
 
 
 namespace Xyperico.Discuss.Forums

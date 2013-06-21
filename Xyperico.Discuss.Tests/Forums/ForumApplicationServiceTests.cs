@@ -1,14 +1,9 @@
-﻿using System;
-using NUnit.Framework;
-using ProtoBuf.Meta;
+﻿using NUnit.Framework;
 using Xyperico.Agres;
-using Xyperico.Agres.Contract;
 using Xyperico.Agres.ProtoBuf;
 using Xyperico.Agres.Sql;
-using Xyperico.Discuss.Contract.Forums;
-using Xyperico.Discuss.Contract.Forums.Commands;
 using Xyperico.Discuss.Forums;
-using System.Diagnostics;
+using Xyperico.Discuss.Forums.Commands;
 
 
 namespace Xyperico.Discuss.Tests.Forums

@@ -50,21 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forums\Commands\CreateForumCommand.cs" />
-    <Compile Include="Forums\Commands\UpdateForumCommand.cs" />
-    <Compile Include="Forums\Events\ForumCreatedEvent.cs" />
-    <Compile Include="Forums\Events\ForumUpdatedEvent.cs" />
-    <Compile Include="Forums\ForumId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Xyperico\Xyperico.Agres\Xyperico.Agres.Contract\Xyperico.Agres.Contract.csproj">
-      <Project>{B18C85D4-0E07-477A-BE44-1F22281D47C7}</Project>
-      <Name>Xyperico.Agres.Contract</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Content Include="README.TXT" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

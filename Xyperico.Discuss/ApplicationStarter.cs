@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using Xyperico.Agres;
-using Xyperico.Agres.Contract;
-using Xyperico.Discuss.Contract.Forums;
+using Xyperico.Discuss.Forums;
 
 
 namespace Xyperico.Discuss

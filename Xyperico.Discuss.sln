@@ -24,8 +24,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyperico.Agres", "..\Xyperi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyperico.Discuss.Contract", "Xyperico.Discuss.Contract\Xyperico.Discuss.Contract.csproj", "{2C5AA7A1-503E-4690-A99D-BF69801D9641}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyperico.Agres.Contract", "..\Xyperico\Xyperico.Agres\Xyperico.Agres.Contract\Xyperico.Agres.Contract.csproj", "{B18C85D4-0E07-477A-BE44-1F22281D47C7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyperico.Agres.Sql", "..\Xyperico\Xyperico.Agres\Xyperico.Agres.Sql\Xyperico.Agres.Sql.csproj", "{9BA99FF6-E704-47D2-9FF2-D1F311EBEE90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyperico.Agres.ProtoBuf", "..\Xyperico\Xyperico.Agres\Xyperico.Agres.ProtoBuf\Xyperico.Agres.ProtoBuf.csproj", "{D150EABC-E736-4BD1-9FC1-CB6F607E000E}"
@@ -126,16 +124,6 @@ Global
 		{2C5AA7A1-503E-4690-A99D-BF69801D9641}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{2C5AA7A1-503E-4690-A99D-BF69801D9641}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2C5AA7A1-503E-4690-A99D-BF69801D9641}.Release|x86.ActiveCfg = Release|Any CPU
-		{B18C85D4-0E07-477A-BE44-1F22281D47C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B18C85D4-0E07-477A-BE44-1F22281D47C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B18C85D4-0E07-477A-BE44-1F22281D47C7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{B18C85D4-0E07-477A-BE44-1F22281D47C7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{B18C85D4-0E07-477A-BE44-1F22281D47C7}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B18C85D4-0E07-477A-BE44-1F22281D47C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B18C85D4-0E07-477A-BE44-1F22281D47C7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B18C85D4-0E07-477A-BE44-1F22281D47C7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{B18C85D4-0E07-477A-BE44-1F22281D47C7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{B18C85D4-0E07-477A-BE44-1F22281D47C7}.Release|x86.ActiveCfg = Release|Any CPU
 		{9BA99FF6-E704-47D2-9FF2-D1F311EBEE90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9BA99FF6-E704-47D2-9FF2-D1F311EBEE90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BA99FF6-E704-47D2-9FF2-D1F311EBEE90}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
