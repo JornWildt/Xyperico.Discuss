@@ -1,7 +1,7 @@
-﻿using Xyperico.Agres;
+﻿using System.Linq;
+using Xyperico.Agres;
+using Xyperico.Agres.Contract;
 using Xyperico.Discuss.Contract.Forums;
-using Xyperico.Discuss.Contract.Forums.Commands;
-using Xyperico.Discuss.Contract.Forums.Events;
 
 
 namespace Xyperico.Discuss
@@ -10,14 +10,14 @@ namespace Xyperico.Discuss
   {
     public static void Initialize()
     {
-      Xyperico.Agres.ProtoBuf.Configuration.RegisterIdentity(typeof(ForumId));
+      Xyperico.Agres.ProtoBuf.SerializerSetup.RegisterIdentity(typeof(ForumId));
 
-      // FIXME: automate this
-      AbstractSerializer.RegisterKnownType(typeof(ForumId));
-      AbstractSerializer.RegisterKnownType(typeof(CreateForumCommand));
-      AbstractSerializer.RegisterKnownType(typeof(UpdateForumCommand));
-      AbstractSerializer.RegisterKnownType(typeof(ForumCreatedEvent));
-      AbstractSerializer.RegisterKnownType(typeof(ForumUpdatedEvent));
+      var serializerTypes = 
+        typeof(ForumId).Assembly.GetTypes()
+        .Where(t => typeof(Identity<>).IsAssignableFrom(t) || typeof(IEvent).IsAssignableFrom(t))
+        .Where(t => !t.IsAbstract);
+
+      AbstractSerializer.RegisterKnownTypes(serializerTypes);
     }
   }
 }
