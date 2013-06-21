@@ -1,10 +1,9 @@
 ﻿using System;
-using Xyperico.Base;
 
 
 namespace Xyperico.Discuss.Posts
 {
-  public class Post : IHaveId<Guid>
+  public class Post
   {
     #region Persisted properties
 
