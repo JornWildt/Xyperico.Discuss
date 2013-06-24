@@ -3,6 +3,7 @@ using CuttingEdge.Conditions;
 using Xyperico.Agres;
 using Xyperico.Discuss.Forums.Commands;
 using Xyperico.Discuss.Forums.Events;
+using System;
 
 
 namespace Xyperico.Discuss.Forums
@@ -20,12 +21,22 @@ namespace Xyperico.Discuss.Forums
     }
 
 
-    /// <summary>
-    /// Domain specific constructor.
-    /// </summary>
-    /// <param name="title"></param>
-    /// <param name="description"></param>
-    public Forum(CreateForumCommand cmd)
+    public override void VerifyCommand(ICommand<ForumId> c)
+    {
+      if (Version == 0)
+      {
+        if (!(c is CreateForumCommand))
+          throw new DomainException("NotCreated", Id, c, "Cannot modify non-existing forum");
+      }
+      else
+      {
+        if (c is CreateForumCommand)
+          throw new DomainException("Recreated", Id, c, "Cannot re-create forum");
+      }
+    }
+
+
+    public void Create(CreateForumCommand cmd)
     {
       Condition.Requires(cmd, "cmd").IsNotNull();
 

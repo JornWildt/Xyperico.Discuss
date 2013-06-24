@@ -4,6 +4,7 @@ using Xyperico.Agres.ProtoBuf;
 using Xyperico.Agres.Sql;
 using Xyperico.Discuss.Forums;
 using Xyperico.Discuss.Forums.Commands;
+using System;
 
 
 namespace Xyperico.Discuss.Tests.Forums
@@ -73,14 +74,30 @@ namespace Xyperico.Discuss.Tests.Forums
     }
 
 
-    //[Test]
-    //public void WhenSendingCommandToNonExistingForumItThrowsMissingResourceException()
-    //{
-    //  // Arrange
-    //  UpdateForumCommand cmd = new UpdateForumCommand(new ForumId(), "Forum A", "Oh well");
+    [Test]
+    public void ItCannotCreateAlreadyCreatedForum()
+    {
+      // Arrange
+      CreateForumCommand c = new CreateForumCommand(new ForumId(), "Hello", "Blah");
+      Service.Handle(c);
 
-    //  // Act + Assert
-    //  AssertThrows<MissingResourceException>(() => Service.Handle(cmd));
-    //}
+      // Act + Assert
+      AssertThrows<DomainException>(
+        () => Service.Handle(c),
+        ex => { Assert.AreEqual("Recreated", ex.Name); });
+    }
+
+
+    [Test]
+    public void ItCannotUpdateNonExistingForum()
+    {
+      // Arrange
+      UpdateForumCommand c = new UpdateForumCommand(new ForumId(), "Hello", "Blah");
+
+      // Act + Assert
+      AssertThrows<DomainException>(
+        () => Service.Handle(c),
+        ex => { Assert.AreEqual("NotCreated", ex.Name); });
+    }
   }
 }

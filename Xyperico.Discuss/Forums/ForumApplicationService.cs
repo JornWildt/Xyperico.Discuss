@@ -14,7 +14,7 @@ namespace Xyperico.Discuss.Forums
 
     public void Handle(CreateForumCommand cmd)
     {
-      Create(cmd, () => new Forum(cmd));
+      Update(cmd, f => f.Create(cmd));
     }
     
     
