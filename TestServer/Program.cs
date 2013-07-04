@@ -13,7 +13,7 @@ namespace TestServer
 {
   class Program
   {
-    const string SqlConnectionString = "Data Source=C:\\tmp\\Xyperico.Discuss.Tests.db";
+    const string SqlConnectionString = "Data Source=C:\\tmp\\Xyperico.Discuss.TestStorage\\Xyperico.Discuss.Tests.db";
 
     protected static readonly ILog Logger = LogManager.GetLogger((typeof(Program)));
 
