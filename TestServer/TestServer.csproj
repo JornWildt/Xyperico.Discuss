@@ -41,6 +41,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,10 +49,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MultiEventPublisher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Xyperico\Xyperico.Agres\Xyperico.Agres.JsonNet\Xyperico.Agres.JsonNet.csproj">
+      <Project>{0A736229-1204-4F4B-87EC-6D44E811D75B}</Project>
+      <Name>Xyperico.Agres.JsonNet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Xyperico\Xyperico.Agres\Xyperico.Agres.MSMQ\Xyperico.Agres.MSMQ.csproj">
+      <Project>{CE004F86-133C-4F7C-A185-30AFA42953F9}</Project>
+      <Name>Xyperico.Agres.MSMQ</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Xyperico\Xyperico.Agres\Xyperico.Agres.ProtoBuf\Xyperico.Agres.ProtoBuf.csproj">
       <Project>{D150EABC-E736-4BD1-9FC1-CB6F607E000E}</Project>
       <Name>Xyperico.Agres.ProtoBuf</Name>

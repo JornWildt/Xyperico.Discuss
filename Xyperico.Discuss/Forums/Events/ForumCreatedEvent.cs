@@ -9,13 +9,13 @@ namespace Xyperico.Discuss.Forums.Events
   public class ForumCreatedEvent : IEvent
   {
     [ProtoMember(1)]
-    public ForumId Id { get; private set; }
+    public ForumId Id { get; set; }
 
     [ProtoMember(2)]
-    public string Title { get; private set; }
+    public string Title { get; set; }
 
     [ProtoMember(3)]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
     
     public ForumCreatedEvent() { }
