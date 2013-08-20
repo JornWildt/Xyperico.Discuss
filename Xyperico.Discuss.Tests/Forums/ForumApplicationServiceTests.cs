@@ -1,10 +1,11 @@
 ﻿using NUnit.Framework;
 using Xyperico.Agres;
+using Xyperico.Agres.EventStore;
 using Xyperico.Agres.ProtoBuf;
-using Xyperico.Agres.Sql;
+using Xyperico.Agres.Serialization;
+using Xyperico.Agres.SQLite;
 using Xyperico.Discuss.Forums;
 using Xyperico.Discuss.Forums.Commands;
-using System;
 
 
 namespace Xyperico.Discuss.Tests.Forums
@@ -23,7 +24,7 @@ namespace Xyperico.Discuss.Tests.Forums
       base.SetUp();
       AppendOnlyStore = new SQLiteAppendOnlyStore(SetupFixture.SqlConnectionString, false);
       ISerializer serializer = new ProtoBufSerializer();
-      Store = new EventStore(AppendOnlyStore, serializer);
+      Store = new EventStoreDB(AppendOnlyStore, serializer);
       Repository = new GenericRepository<Forum, ForumId>(Store);
       Service = new ForumApplicationService(Store);
     }

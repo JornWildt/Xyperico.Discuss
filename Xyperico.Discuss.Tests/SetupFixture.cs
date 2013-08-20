@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using Xyperico.Base;
-using Xyperico.Agres.Sql;
+using Xyperico.Agres.SQLite;
 
 
 namespace Xyperico.Discuss.Tests

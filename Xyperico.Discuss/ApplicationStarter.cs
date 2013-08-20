@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Xyperico.Agres;
+using Xyperico.Agres.Serialization;
 using Xyperico.Discuss.Forums;
 
 

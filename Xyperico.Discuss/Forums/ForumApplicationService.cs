@@ -1,10 +1,15 @@
-﻿using Xyperico.Agres;
+﻿using Xyperico.Agres.EventStore;
+using Xyperico.Agres.MessageBus;
 using Xyperico.Discuss.Forums.Commands;
+using System;
 
 
 namespace Xyperico.Discuss.Forums
 {
-  public class ForumApplicationService : GenericApplicationService<Forum, ForumId>
+  public class ForumApplicationService : 
+    GenericApplicationService<Forum, ForumId>,
+    IHandleMessage<CreateForumCommand>,
+    IHandleMessage<UpdateForumCommand>
   {
     public ForumApplicationService(IEventStore eventStore)
       : base(eventStore)
@@ -14,6 +19,7 @@ namespace Xyperico.Discuss.Forums
 
     public void Handle(CreateForumCommand cmd)
     {
+      Console.WriteLine("Received CreateForumCommand");
       Update(cmd, f => f.Create(cmd));
     }
     

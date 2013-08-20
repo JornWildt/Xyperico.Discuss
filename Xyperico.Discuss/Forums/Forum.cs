@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using CuttingEdge.Conditions;
 using Xyperico.Agres;
+using Xyperico.Agres.EventStore;
 using Xyperico.Discuss.Forums.Commands;
 using Xyperico.Discuss.Forums.Events;
-using System;
 
 
 namespace Xyperico.Discuss.Forums

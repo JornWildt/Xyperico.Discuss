@@ -1,16 +1,22 @@
-﻿using CuttingEdge.Conditions;
+﻿using System.Runtime.Serialization;
+using CuttingEdge.Conditions;
 using Xyperico.Agres;
+using ProtoBuf;
 
 
 namespace Xyperico.Discuss.Forums.Commands
 {
+  [ProtoContract]
   public class CreateForumCommand : ICommand<ForumId>
   {
-    public ForumId Id { get; private set; }
-    
-    public string Title { get; private set; }
-    
-    public string Description { get; private set; }
+    [ProtoMember(1)]
+    public ForumId Id { get; set; }
+
+    [ProtoMember(2)]
+    public string Title { get; set; }
+
+    [ProtoMember(3)]
+    public string Description { get; set; }
 
     
     public CreateForumCommand() { }

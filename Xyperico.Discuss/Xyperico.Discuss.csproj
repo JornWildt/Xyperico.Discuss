@@ -42,6 +42,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +57,7 @@
     <Compile Include="Forums\Events\ForumUpdatedEvent.cs" />
     <Compile Include="Forums\Forum.cs" />
     <Compile Include="Forums\ForumApplicationService.cs" />
+    <Compile Include="Forums\ForumEventTesterService.cs" />
     <Compile Include="Forums\ForumId.cs" />
     <Compile Include="Posts\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
